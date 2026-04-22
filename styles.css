@@ -160,6 +160,18 @@ body::before {
   align-items: center;
   gap: 1.4rem;
 }
+.hero-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+.eccv-logo {
+  height: 56px;
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+}
 .hero-badge {
   display: inline-flex;
   align-items: center;
