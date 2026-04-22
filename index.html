@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEAM 2 @ ECCV — Benchmarking Evidence-Aligned Multimodal Reasoning</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="nav-logo">BEAM <span>2</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+        <li><a href="#cfp" class="nav-cta">Submit Paper</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        ECCV 2026 Workshop
+      </div>
+      <h1>2<sup>nd</sup> Workshop on<br>Benchmarking Evidence&#8209;Aligned<br>Multimodal Reasoning</h1>
+      <p class="subtitle">Moving beyond accuracy-only evaluation — verifying that multimodal predictions are supported by correct perceptual signals.</p>
+      <div class="hero-meta">
+        <div class="meta-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Half-Day Workshop &mdash; 4 Hours
+        </div>
+        <div class="meta-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          09:00 &ndash; 13:00
+        </div>
+        <div class="meta-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          ECCV 2026
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#cfp" class="button primary">Submit a Paper</a>
+        <a href="#schedule" class="button secondary">View Schedule</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- ── ABOUT ── -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">About</span>
+          <h2>Workshop Overview</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Multimodal foundation models now achieve strong performance on audio-visual QA, vision–language, and video understanding benchmarks, yet <strong>accuracy can hide shortcut reasoning</strong>. Models may answer correctly by relying on linguistic priors or spurious correlations rather than attending to the visual regions, frames, or audio events that provide the true evidence.</p>
+            <p>Most existing benchmarks score only the final answer, offering limited insight into whether a model actually "saw" or "heard" what it needed. <strong>BEAM 2</strong> centers on <em>evidence-aligned multimodal reasoning</em>: datasets, protocols, and metrics that jointly evaluate (i) answer correctness and (ii) perceptual grounding of the reasoning process.</p>
+            <p>We emphasize evaluation designs with <strong>verifiable anchors</strong> — bounding boxes, representative frames, temporal segments, and audio-event timestamps — and model outputs that include structured evidence references and short grounded rationales.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num">4</span>
+              <span class="stat-label">Invited Talks</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">10</span>
+              <span class="stat-label">Accepted Papers</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">4h</span>
+              <span class="stat-label">Half-Day Program</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">100+</span>
+              <span class="stat-label">Expected Attendees</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3>Evidence Alignment</h3>
+            <p>Verifying that predictions are supported by the correct perceptual signals — not linguistic shortcuts.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            </div>
+            <h3>Perceptual Grounding</h3>
+            <p>Linking multimodal reasoning to concrete audio-visual cues with interpretable anchors.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+            </div>
+            <h3>Composite Metrics</h3>
+            <p>Jointly scoring answer correctness and grounding quality beyond accuracy-only reporting.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Community Standards</h3>
+            <p>Establishing standardized, interpretable metrics for the next generation of trustworthy multimodal systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TOPICS ── -->
+    <section class="section alt" id="topics">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Scope</span>
+          <h2>Topics of Interest</h2>
+          <p>BEAM 2 welcomes contributions spanning methodology, empirical analysis, and systems-level advances in evidence-aligned multimodal evaluation.</p>
+        </div>
+        <div class="topics-grid">
+          <div class="topic-item">
+            <span class="topic-num">01</span>
+            <div>
+              <h3>Reasoning-Aware Benchmarks</h3>
+              <p>Multimodal benchmarks for video, audio, vision–language, and audio-visual QA that go beyond final-answer scoring.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">02</span>
+            <div>
+              <h3>Perceptual Grounding &amp; Localization</h3>
+              <p>Spatial, temporal, and audio-event grounding and evidence localization for multimodal reasoning.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">03</span>
+            <div>
+              <h3>Explanation Faithfulness</h3>
+              <p>Evaluation of explanation faithfulness and evidence alignment beyond plausibility checks.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">04</span>
+            <div>
+              <h3>Composite Metrics</h3>
+              <p>Metrics that jointly score answer correctness and grounding quality (composite or multi-objective).</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">05</span>
+            <div>
+              <h3>Counterfactual &amp; Perturbation Evaluations</h3>
+              <p>Muting audio, masking regions, or swapping objects/events to probe genuine model understanding.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">06</span>
+            <div>
+              <h3>Human Evaluation &amp; Auditing</h3>
+              <p>Human-in-the-loop protocols and auditing tools for interpretable multimodal reasoning and agentic deployment.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">07</span>
+            <div>
+              <h3>Bias, Robustness &amp; Fairness</h3>
+              <p>Robustness and fairness in multimodal reasoning across accents, dialects, demographics, and domain shift.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">08</span>
+            <div>
+              <h3>Benchmark Governance</h3>
+              <p>Documentation, licensing, privacy-preserving releases, and responsible leaderboards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SCHEDULE ── -->
+    <section class="section" id="schedule">
+      <div class="container narrow">
+        <div class="section-intro">
+          <span class="section-label">Program</span>
+          <h2>Workshop Schedule</h2>
+          <p>A half-day (4-hour) program with invited talks, oral presentations, a poster session, and a closing panel.</p>
+        </div>
+        <div class="schedule-list">
+          <div class="schedule-row opening">
+            <div class="sched-time">09:00 – 09:10</div>
+            <div class="sched-body">
+              <span class="sched-type type-opening">Opening</span>
+              <h3>Opening Remarks</h3>
+              <p>From accuracy to evidence alignment</p>
+            </div>
+          </div>
+          <div class="schedule-row talk">
+            <div class="sched-time">09:10 – 09:35</div>
+            <div class="sched-body">
+              <span class="sched-type type-talk">Invited Talk 1 ✓ Confirmed</span>
+              <h3>Dacheng Tao</h3>
+              <p>Nanyang Technological University</p>
+            </div>
+          </div>
+          <div class="schedule-row oral">
+            <div class="sched-time">09:35 – 09:55</div>
+            <div class="sched-body">
+              <span class="sched-type type-oral">Oral Session 1</span>
+              <h3>2 Contributed Papers</h3>
+            </div>
+          </div>
+          <div class="schedule-row talk">
+            <div class="sched-time">09:55 – 10:20</div>
+            <div class="sched-body">
+              <span class="sched-type type-tentative">Invited Talk 2 · Tentative</span>
+              <h3>Subbarao "Rao" Kambhampati</h3>
+              <p>Arizona State University</p>
+            </div>
+          </div>
+          <div class="schedule-row break">
+            <div class="sched-time">10:20 – 10:50</div>
+            <div class="sched-body">
+              <span class="sched-type type-break">Break</span>
+              <h3>Poster Session &amp; Coffee</h3>
+            </div>
+          </div>
+          <div class="schedule-row talk">
+            <div class="sched-time">10:50 – 11:15</div>
+            <div class="sched-body">
+              <span class="sched-type type-talk">Invited Talk 3 ✓ Confirmed</span>
+              <h3>Aditya Grover</h3>
+              <p>UCLA / Inception</p>
+            </div>
+          </div>
+          <div class="schedule-row oral">
+            <div class="sched-time">11:15 – 11:35</div>
+            <div class="sched-body">
+              <span class="sched-type type-oral">Oral Session 2</span>
+              <h3>2 Contributed Papers</h3>
+            </div>
+          </div>
+          <div class="schedule-row talk">
+            <div class="sched-time">11:35 – 12:00</div>
+            <div class="sched-body">
+              <span class="sched-type type-tentative">Invited Talk 4 · Tentative</span>
+              <h3>Ishita Dasgupta</h3>
+              <p>Google DeepMind</p>
+            </div>
+          </div>
+          <div class="schedule-row spotlight">
+            <div class="sched-time">12:00 – 12:20</div>
+            <div class="sched-body">
+              <span class="sched-type type-oral">Spotlight</span>
+              <h3>Invited Paper from Main Conference</h3>
+              <p>If feasible</p>
+            </div>
+          </div>
+          <div class="schedule-row panel">
+            <div class="sched-time">12:20 – 12:50</div>
+            <div class="sched-body">
+              <span class="sched-type type-panel">Panel</span>
+              <h3>"How do we evaluate multimodal reasoning we can trust?"</h3>
+            </div>
+          </div>
+          <div class="schedule-row closing">
+            <div class="sched-time">12:50 – 13:00</div>
+            <div class="sched-body">
+              <span class="sched-type type-opening">Closing</span>
+              <h3>Closing Remarks &amp; Shared-Task Updates</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INVITED SPEAKERS ── -->
+    <section class="section alt" id="speakers">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Keynotes</span>
+          <h2>Invited Speakers</h2>
+        </div>
+        <div class="speakers-grid">
+
+          <article class="speaker-card confirmed">
+            <div class="speaker-img-wrap">
+              <img
+                src="https://dr.ntu.edu.sg/bitstream/10356/145009/2/Dacheng-Tao.jpg"
+                alt="Dacheng Tao"
+                class="speaker-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+              />
+              <div class="speaker-initials" style="display:none">DT</div>
+            </div>
+            <div class="speaker-info">
+              <div class="speaker-status confirmed-badge">✓ Confirmed</div>
+              <h3>Dacheng Tao</h3>
+              <p class="speaker-role">Distinguished University Professor</p>
+              <p class="speaker-affil">Nanyang Technological University</p>
+              <p class="speaker-bio">Applies statistics and mathematics to AI and data science with 200+ publications and multiple best paper and test-of-time awards. Fellow of the Australian Academy of Science, AAAS, ACM, and IEEE.</p>
+            </div>
+          </article>
+
+          <article class="speaker-card confirmed">
+            <div class="speaker-img-wrap">
+              <img
+                src="https://aditya-grover.github.io/images/aditya-grover.jpg"
+                alt="Aditya Grover"
+                class="speaker-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+              />
+              <div class="speaker-initials" style="display:none">AG</div>
+            </div>
+            <div class="speaker-info">
+              <div class="speaker-status confirmed-badge">✓ Confirmed</div>
+              <h3>Aditya Grover</h3>
+              <p class="speaker-role">Assistant Professor</p>
+              <p class="speaker-affil">UCLA &amp; CTO, Inception</p>
+              <p class="speaker-bio">Leads the MINT group at UCLA, focusing on generative models and reinforcement learning for scientific discovery. Previously at Meta FAIR and UC Berkeley. PhD from Stanford.</p>
+            </div>
+          </article>
+
+          <article class="speaker-card tentative">
+            <div class="speaker-img-wrap">
+              <img
+                src="https://ishita-dg.github.io/assets/img/prof_pic.jpg"
+                alt="Ishita Dasgupta"
+                class="speaker-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+              />
+              <div class="speaker-initials" style="display:none">ID</div>
+            </div>
+            <div class="speaker-info">
+              <div class="speaker-status tentative-badge">Tentative</div>
+              <h3>Ishita Dasgupta</h3>
+              <p class="speaker-role">Staff Research Scientist</p>
+              <p class="speaker-affil">Google DeepMind</p>
+              <p class="speaker-bio">Advances Gemini's multimedia capabilities via computational cognitive science, specializing in modeling human reasoning to interpret and improve AI systems. PhD in Physics from Harvard.</p>
+            </div>
+          </article>
+
+          <article class="speaker-card tentative">
+            <div class="speaker-img-wrap">
+              <img
+                src="https://rakaposhi.eas.asu.edu/rao-2023.jpg"
+                alt="Subbarao Kambhampati"
+                class="speaker-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+              />
+              <div class="speaker-initials" style="display:none">RK</div>
+            </div>
+            <div class="speaker-info">
+              <div class="speaker-status tentative-badge">Tentative</div>
+              <h3>Subbarao "Rao" Kambhampati</h3>
+              <p class="speaker-role">Professor</p>
+              <p class="speaker-affil">Arizona State University</p>
+              <p class="speaker-bio">Directs the Yochan group researching AI planning and human-aware decision-making. Fellow of AAAI, AAAS, and ACM. President of AAAI (2016–2018).</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ORGANIZERS ── -->
+    <section class="section" id="organizers">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Team</span>
+          <h2>Organizing Committee</h2>
+          <p>A team spanning Carnegie Mellon University and Amazon AGI, combining academic and industrial expertise in computer vision, multimodal learning, and large-scale evaluation.</p>
+        </div>
+
+        <div class="org-affil-group">
+          <h3 class="affil-label">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Carnegie_Mellon_University_seal.svg/120px-Carnegie_Mellon_University_seal.svg.png" alt="CMU" class="affil-logo" />
+            Carnegie Mellon University
+          </h3>
+          <div class="organizers-grid">
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <img
+                  src="https://www.ri.cmu.edu/wp-content/uploads/2016/11/laszlo_jeni-1.jpg"
+                  alt="Laszlo A. Jeni"
+                  class="org-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+                />
+                <div class="org-initials" style="display:none">LJ</div>
+              </div>
+              <div class="org-info">
+                <h4>Laszlo A. Jeni</h4>
+                <p>Carnegie Mellon University</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">JJ</div>
+              </div>
+              <div class="org-info">
+                <h4>Joel Julin</h4>
+                <p>Carnegie Mellon University</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">SK</div>
+              </div>
+              <div class="org-info">
+                <h4>Souraja Kundu</h4>
+                <p>Carnegie Mellon University</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">LD</div>
+              </div>
+              <div class="org-info">
+                <h4>Liza Dahiya</h4>
+                <p>Carnegie Mellon University</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">AB</div>
+              </div>
+              <div class="org-info">
+                <h4>Ananya Bal</h4>
+                <p>Carnegie Mellon University</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="org-affil-group">
+          <h3 class="affil-label">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="affil-logo amazon-logo" />
+            Amazon AGI
+          </h3>
+          <div class="organizers-grid">
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">XZ</div>
+              </div>
+              <div class="org-info">
+                <h4>Xu Zhang</h4>
+                <p>Amazon AGI</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">LX</div>
+              </div>
+              <div class="org-info">
+                <h4>Liuyue Xie</h4>
+                <p>Amazon AGI</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">HY</div>
+              </div>
+              <div class="org-info">
+                <h4>Hao Yang</h4>
+                <p>Amazon AGI</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">JY</div>
+              </div>
+              <div class="org-info">
+                <h4>Jingru Yi</h4>
+                <p>Amazon AGI</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">DM</div>
+              </div>
+              <div class="org-info">
+                <h4>Davide Modolo</h4>
+                <p>Amazon AGI</p>
+              </div>
+            </article>
+
+            <article class="organizer-card">
+              <div class="org-img-wrap">
+                <div class="org-initials">AS</div>
+              </div>
+              <div class="org-info">
+                <h4>Ashwin Swaminathan</h4>
+                <p>Amazon AGI</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CALL FOR PAPERS ── -->
+    <section class="section alt" id="cfp">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Call for Papers</span>
+          <h2>Submit Your Work</h2>
+          <p>We welcome original papers, position statements, and benchmark reports aligned with the workshop themes.</p>
+        </div>
+        <div class="cfp-grid">
+          <div class="cfp-card">
+            <div class="cfp-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+            </div>
+            <h3>Paper Format</h3>
+            <p>Submissions should follow ECCV formatting guidelines and be no longer than <strong>8 pages</strong> excluding references.</p>
+          </div>
+          <div class="cfp-card">
+            <div class="cfp-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3>Important Dates</h3>
+            <ul class="dates-list">
+              <li><span>Submission Opens</span> <strong>TBD</strong></li>
+              <li><span>Paper Deadline</span> <strong>TBD</strong></li>
+              <li><span>Notification</span> <strong>TBD</strong></li>
+              <li><span>Workshop Date</span> <strong>ECCV 2026</strong></li>
+            </ul>
+          </div>
+          <div class="cfp-card">
+            <div class="cfp-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3>Contact</h3>
+            <p>Questions about submissions or the workshop program:</p>
+            <a href="mailto:laszlojeni@cmu.edu" class="contact-link">laszlojeni@cmu.edu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">BEAM <strong>2</strong></span>
+        <p>2<sup>nd</sup> Workshop on Benchmarking Evidence-Aligned Multimodal Reasoning</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#topics">Topics</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#cfp">Submit</a>
+      </div>
+      <p class="footer-copy">ECCV 2026 Workshop &nbsp;&middot;&nbsp; Carnegie Mellon University &amp; Amazon AGI</p>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    // Mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
