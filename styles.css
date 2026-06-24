@@ -602,9 +602,9 @@ body::before {
 }
 .org-info h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; font-family: 'Inter', sans-serif; }
 .org-info p  { font-size: 0.77rem; color: var(--muted); font-family: 'Inter', sans-serif; }
+.org-info .org-role { font-size: 0.77rem; font-weight: 600; color: var(--accent); margin-bottom: 0.1rem; font-family: 'Inter', sans-serif; }
 
-/* ── Call for Papers ── */
-.cfp-grid {
+/* ── Call for Papers ── */.cfp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
@@ -631,6 +631,7 @@ body::before {
 .cfp-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.65rem; font-family: 'Inter', sans-serif; }
 .cfp-card p  { color: var(--muted-hi); font-size: 0.92rem; line-height: 1.6; }
 .cfp-card p strong { color: var(--text); }
+.cfp-submit { text-align: center; margin-top: 2.5rem; }
 .dates-list { display: flex; flex-direction: column; gap: 0; }
 .dates-list li {
   display: flex;
