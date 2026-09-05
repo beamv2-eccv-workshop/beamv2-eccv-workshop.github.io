@@ -461,6 +461,31 @@ body::before {
 }
 .sched-body h3 { font-size: 0.97rem; font-weight: 700; font-family: 'Inter', sans-serif; }
 .sched-body p  { font-size: 0.85rem; color: var(--muted); }
+.sched-papers {
+  list-style: none;
+  margin: 0.6rem 0 0.15rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.sched-papers li {
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--border-hi);
+}
+.sched-papers .paper-title {
+  display: block;
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+}
+.sched-papers .paper-authors {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
 .sched-type {
   display: inline-block;
   font-size: 0.7rem;
